@@ -3,7 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const readingForm = document.querySelector('#new-item-form')
   readingForm.addEventListener('submit', handleReadingSubmit)
+
+  document.addEventListener('#reading-list', addDeleteButton)
+  console.log(document.querySelector('#reading-list'));
+  // const checkIfAnyEntries = document.querySelector('li')
+  // checkingAnyEntries.addEventListener('', provideDeleteAllButton )
 })
+
+// const provideDeleteAllButton = function() {
+//   if (checkIfAnyEntries === null) {
+//     return
+//   }
+//   else {
+
+
+//   }
+// }
 
 const handleReadingSubmit = function (event) {
   event.preventDefault()
@@ -33,4 +48,11 @@ const handleReadingSubmit = function (event) {
   newDiv.appendChild(newCategory)
 
   event.target.reset()
+}
+
+const addDeleteButton = function () {
+const deleteButton = document.createElement('button')
+deleteButton.textContent = "Delete"
+const header = document.querySelector('#reading-list')
+header.appendChild(deleteButton)
 }
